@@ -100,7 +100,7 @@ function SchemeDetailPageRoute() {
  * (the Next.js host shell), a MemoryRouter is used at the requested path so the
  * first HTML already contains the right page and hydration matches.
  */
-export function App({ initialPath = "/" }: { initialPath?: string }) {
+export function App({ initialPath = "/", basename = "" }: { initialPath?: string; basename?: string }) {
   const isBrowser = typeof window !== "undefined";
 
   const tree = (
@@ -116,7 +116,7 @@ export function App({ initialPath = "/" }: { initialPath?: string }) {
   );
 
   if (isBrowser) {
-    return <BrowserRouter>{tree}</BrowserRouter>;
+    return <BrowserRouter basename={basename}>{tree}</BrowserRouter>;
   }
 
   return (

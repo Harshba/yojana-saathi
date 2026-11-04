@@ -14,6 +14,6 @@ if (!container) throw new Error("Root container #root was not found");
 
 createRoot(container).render(
   <StrictMode>
-    <App />
+    <App basename="/yojana-saathi" />
   </StrictMode>,
 );
