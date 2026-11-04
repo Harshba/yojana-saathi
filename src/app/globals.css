@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Nirmala UI", "Noto Sans", Arial, sans-serif;
+  --font-devanagari: "Noto Sans Devanagari", "Nirmala UI", "Mangal", "Inter", ui-sans-serif,
+    system-ui, sans-serif;
+
+  /* Restrained government-portal palette: navy primary, saffron + green accents */
+  --color-navy-50: #eef3f9;
+  --color-navy-100: #d8e4f1;
+  --color-navy-200: #b0c6e0;
+  --color-navy-300: #7d9fc7;
+  --color-navy-400: #4c78aa;
+  --color-navy-500: #2b5b8c;
+  --color-navy-600: #1d456d;
+  --color-navy-700: #163557;
+  --color-navy-800: #102943;
+  --color-navy-900: #0b1e33;
+
+  --color-saffron-50: #fff6ec;
+  --color-saffron-100: #ffe9d1;
+  --color-saffron-200: #ffd3a4;
+  --color-saffron-300: #ffb768;
+  --color-saffron-400: #ffa238;
+  --color-saffron-500: #f2870d;
+  --color-saffron-600: #cf6f06;
+  --color-saffron-700: #a2550a;
+
+  --color-leaf-50: #eef8f0;
+  --color-leaf-100: #d6eedd;
+  --color-leaf-200: #a8dcb7;
+  --color-leaf-300: #6fc289;
+  --color-leaf-400: #38a35d;
+  --color-leaf-500: #138a3c;
+  --color-leaf-600: #0e6f31;
+  --color-leaf-700: #0b5a28;
+
+  --color-ash-50: #f7f8fa;
+  --color-ash-100: #eff2f6;
+  --color-ash-200: #e2e7ee;
+  --color-ash-300: #cbd3de;
+  --color-ash-400: #9aa7b8;
+  --color-ash-500: #6b7a8f;
+  --color-ash-600: #4c596b;
+  --color-ash-700: #35404e;
+}
+
+@layer base {
+  :root {
+    --ys-text-scale: 100%;
+  }
+  html {
+    font-size: var(--ys-text-scale);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  html[data-text-scale="1"] {
+    --ys-text-scale: 108%;
+  }
+  html[data-text-scale="2"] {
+    --ys-text-scale: 116%;
+  }
+  body {
+    @apply bg-white text-navy-900 antialiased;
+  }
+  html[data-lang="hi"] {
+    letter-spacing: 0.006em;
+  }
+  /* Devanagari-first stack while reading in Hindi */
+  html[data-lang="hi"] body {
+    font-family: var(--font-devanagari);
+  }
+  :focus-visible {
+    @apply outline-3 outline-offset-2 outline-navy-500;
+    border-radius: 2px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .ys-container {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8;
+  }
+  .ys-panel {
+    @apply rounded-md border border-ash-200 bg-ash-50 p-5 sm:p-6;
+  }
+  .ys-card {
+    @apply flex h-full flex-col rounded-md border border-ash-200 bg-white p-5 shadow-[0_1px_2px_rgba(16,41,67,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-navy-200 hover:shadow-[0_8px_24px_rgba(16,41,67,0.10)];
+  }
+  .ys-label {
+    @apply mb-1.5 block text-[0.82rem] font-semibold text-navy-800;
+  }
+  .ys-input {
+    @apply w-full rounded-md border border-ash-300 bg-white px-3.5 py-2.5 text-[0.98rem] text-navy-900 transition placeholder:text-ash-400 focus:border-navy-500 focus:ring-2 focus:ring-navy-200 focus:outline-none;
+  }
+  .ys-input-error {
+    @apply border-[#b3261e] bg-[#fdf3f2] focus:border-[#b3261e] focus:ring-[#f2c7c3];
+  }
+  .ys-btn-primary,
+  .ys-btn-saffron,
+  .ys-btn-outline,
+  .ys-btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-5 py-3 text-[0.95rem] font-semibold transition focus-visible:outline-3 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .ys-btn-primary {
+    @apply bg-navy-700 text-white hover:bg-navy-800 focus-visible:outline-navy-600;
+  }
+  .ys-btn-saffron {
+    @apply bg-saffron-500 text-navy-900 hover:bg-saffron-400 focus-visible:outline-saffron-600;
+  }
+  .ys-btn-outline {
+    @apply border-2 border-navy-700 bg-white text-navy-800 hover:bg-navy-50 focus-visible:outline-navy-600;
+  }
+  .ys-btn-ghost {
+    @apply border border-ash-300 bg-white text-navy-800 hover:border-navy-300 hover:bg-navy-50;
+  }
+  .ys-chip {
+    @apply inline-flex items-center gap-1.5 rounded border border-ash-300 bg-white px-2.5 py-1 text-[0.76rem] font-semibold tracking-wide text-navy-700 uppercase;
+  }
+  .ys-h2 {
+    @apply text-[1.6rem] leading-tight font-bold tracking-tight text-navy-900 sm:text-[1.95rem];
+  }
+  .ys-eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.78rem] font-bold tracking-[0.14em] text-navy-600 uppercase;
+  }
+  .ys-lead {
+    @apply text-[1.02rem] leading-7 text-ash-700 sm:text-[1.08rem];
+  }
+  .ys-link {
+    @apply font-semibold text-navy-700 underline decoration-navy-300 underline-offset-4 hover:text-navy-900 hover:decoration-navy-700;
+  }
+  .ys-table th {
+    @apply text-left;
+  }
+}
+
+/* Respect users who ask for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
