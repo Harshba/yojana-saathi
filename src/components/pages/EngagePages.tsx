@@ -24,6 +24,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SaathiForm } from "@/components/forms/SaathiForm";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { ImpactDashboard } from "@/components/ImpactDashboard";
+import { publicAsset } from "@/lib/publicAsset";
 
 /* ================================================================== *
  * Become a Saathi
@@ -55,7 +56,7 @@ export function SaathiPage() {
             <p className="ys-lead">{t("saathi.roleBody")}</p>
             <div className="mt-5 overflow-hidden rounded-md border border-ash-200">
               <img
-                src="/images/training.jpg"
+                src={publicAsset("images/training.jpg")}
                 alt="Rural women sitting together on a veranda during a scheme training session with papers and a smartphone"
                 width={1536}
                 height={1024}

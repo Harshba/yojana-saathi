@@ -26,6 +26,7 @@ import { ImpactDashboard } from "@/components/ImpactDashboard";
 import { Notice, Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { BarList } from "@/components/ui/Charts";
+import { publicAsset } from "@/lib/publicAsset";
 
 const whyItems = [
   { icon: Compass, title: "why.f1Title", body: "why.f1Body" },
@@ -89,7 +90,7 @@ export function HomePage() {
           <div className="relative">
             <div className="overflow-hidden rounded-md border border-navy-100 bg-white p-2 shadow-[0_10px_40px_-18px_rgba(16,41,67,0.45)]">
               <img
-                src="/images/hero-saathi.jpg"
+                src={publicAsset("images/hero-saathi.jpg")}
                 alt="A trained community worker from the village sitting with an elderly couple, going through a government scheme application form"
                 width={1536}
                 height={1024}
@@ -217,7 +218,7 @@ export function HomePage() {
           <div className="space-y-4">
             <div className="overflow-hidden rounded-md border border-ash-200">
               <img
-                src="/images/village.jpg"
+                src={publicAsset("images/village.jpg")}
                 alt="A rural village in Bihar with brick houses, fields and a footpath at golden hour"
                 width={1536}
                 height={1024}
