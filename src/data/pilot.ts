@@ -26,29 +26,29 @@ export const pilot = {
     benefits: 450,
     saathis: 2,
     durationMonths: 6,
-    budgetINR: 135000,
+    budgetINR: 70000,
   },
 } as const;
 
 export const budgetRows: { label: Loc; amount: number; note: Loc }[] = [
   {
     label: { en: "Saathi training and monthly stipend support (2 women)", hi: "साथी प्रशिक्षण एवं मासिक भत्ता सहायता (2 महिलाएँ)" },
-    amount: 60000,
+    amount: 31000,
     note: { en: "Three-week training, refreshers, stipend", hi: "तीन सप्ताह प्रशिक्षण, रिफ़्रेशर, भत्ता" },
   },
   {
     label: { en: "Field rounds, travel and camp days", hi: "फ़ील्ड भ्रमण, यातायात एवं शिविर दिवस" },
-    amount: 33000,
+    amount: 17000,
     note: { en: "Fuel/local travel, camp hall, drinking water", hi: "स्थानीय यातायात, शिविर स्थल, पानी" },
   },
   {
     label: { en: "Printing, photocopies, device and data", hi: "छपाई, फ़ोटोकॉपी, उपकरण व डेटा" },
-    amount: 27000,
+    amount: 14000,
     note: { en: "Forms, checklists, data packs, printouts", hi: "फ़ॉर्म, चेकलिस्ट, डेटा पैक, प्रिंटआउट" },
   },
   {
     label: { en: "Coordinator, monitoring, documentation", hi: "समन्वयक, निगरानी एवं प्रलेखन" },
-    amount: 15000,
+    amount: 8000,
     note: { en: "Case review, reporting, audit trail", hi: "केस समीक्षा, रिपोर्टिंग, लेखा-परीक्षण" },
   },
 ];
@@ -312,8 +312,8 @@ export const targetsTable: { metric: Loc; target: Loc; source: Loc }[] = [
   },
   {
     metric: { en: "Cost per household reached", hi: "प्रति पहुँचा परिवार लागत" },
-    target: { en: "≈ ₹180", hi: "≈ ₹180" },
-    source: { en: "₹1.35 lakh ÷ 750 households", hi: "₹1.35 लाख ÷ 750 परिवार" },
+    target: { en: "≈ ₹93", hi: "≈ ₹93" },
+    source: { en: "₹70,000 ÷ 750 households", hi: "₹70,000 ÷ 750 परिवार" },
   },
 ];
 

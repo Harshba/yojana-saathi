@@ -102,7 +102,7 @@ npm run start               # http://localhost:3000
 
 ## Data & demo disclaimer
 
-Figures shown (750 households / 600 applications / 450 benefits / 2 Saathis, the ₹1.35 lakh
+Figures shown (750 households / 600 applications / 450 benefits / 2 Saathis, the ₹70,000
 budget, monthly plan, quotes) come from the project design document and are **targets or sample
 data**, labelled as such. Contact details are placeholders. Scheme rules, amounts and portals were
 checked against official sources (October 2026 — e.g. Bihar social security pension ₹1,100/month
