@@ -67,6 +67,10 @@ html[data-theme="dark"] {
   --color-navy-700: #dbe5ee;
   --color-navy-800: #e7eef4;
   --color-navy-900: #f1f5f8;
+  --color-saffron-50: #332719;
+  --color-saffron-100: #49331d;
+  --color-leaf-50: #142c22;
+  --color-leaf-100: #1b3a2b;
 }
 
 html[data-theme="dark"] body {
@@ -81,6 +85,75 @@ html[data-theme="dark"] .bg-navy-800 { background-color: #12263a; }
 html[data-theme="dark"] .bg-navy-700 { background-color: #1d456d; }
 html[data-theme="dark"] .border-navy-700 { border-color: #30475d; }
 html[data-theme="dark"] .border-navy-600 { border-color: #40576d; }
+html[data-theme="dark"] .bg-saffron-50 { background-color: #332719 !important; }
+html[data-theme="dark"] .bg-leaf-50 { background-color: #142c22 !important; }
+html[data-theme="dark"] [class~="bg-navy-800/60"] { background-color: rgb(18 38 58 / 60%) !important; }
+html[data-theme="dark"] [class~="bg-navy-800/70"] { background-color: rgb(18 38 58 / 70%) !important; }
+
+html[data-theme="dark"] .ys-logo-surface {
+  border-radius: 0.25rem;
+  background-color: #fff !important;
+  padding: 0.25rem;
+}
+
+html[data-theme="dark"] .ys-btn-primary {
+  background-color: #1d456d;
+  color: #fff;
+}
+
+html[data-theme="dark"] .ys-btn-outline,
+html[data-theme="dark"] .ys-btn-ghost {
+  border-color: #718ba4;
+  background-color: transparent;
+  color: #e7eef4;
+}
+
+html[data-theme="dark"] .ys-btn-outline:hover,
+html[data-theme="dark"] .ys-btn-ghost:hover {
+  background-color: #1d456d;
+}
+
+html[data-theme="dark"] .ys-btn-saffron {
+  color: #0b1e33;
+}
+
+html[data-theme="dark"] .funding-budget-panel {
+  border-color: #40576d;
+  background-color: #12263a !important;
+}
+
+html[data-theme="dark"] .funding-budget-panel .text-navy-900 {
+  color: #f1f5f8 !important;
+}
+
+html[data-theme="dark"] .funding-budget-panel .text-navy-700 {
+  color: #ffb768 !important;
+}
+
+html[data-theme="dark"] .funding-budget-panel .text-ash-600 {
+  color: #cbd9e6 !important;
+}
+
+html[data-theme="dark"] .funding-budget-panel .bg-ash-200 {
+  background-color: #40576d !important;
+}
+
+html[data-theme="dark"] .funding-actions .ys-btn-outline {
+  color: #f1f5f8 !important;
+}
+
+html[data-theme="dark"] a.dark-funding-button {
+  color: #f1f5f8 !important;
+}
+
+html[data-theme="dark"] a.dark-funding-button:hover {
+  background-color: #1d456d !important;
+  color: #fff !important;
+}
+
+html[data-theme="dark"] .funding-supporters li {
+  color: #dce7f0 !important;
+}
 
 @layer base {
   :root {

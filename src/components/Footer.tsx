@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="border-t-4 border-saffron-500 bg-navy-900 text-navy-100">
       <div className="ys-container grid gap-10 py-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="w-fit rounded-sm bg-white p-2">
+          <div className="ys-logo-surface w-fit rounded-sm bg-white p-2">
             <Logo className="w-[190px] sm:w-[220px]" />
           </div>
           <p className="mt-4 max-w-md text-[0.9rem] leading-6">{t("footer.aboutText")}</p>

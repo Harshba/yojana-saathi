@@ -196,7 +196,7 @@ export function EligibilityChecker() {
 
           {/* Section 2 */}
           <FormSection title={t("elig.sectionHousehold")} divided>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4">
               <Field id="el-income" label={t("elig.income")} required error={errorFor(errors.income, t)}>
                 <SelectInput
                   id="el-income"

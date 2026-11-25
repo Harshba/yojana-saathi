@@ -296,16 +296,16 @@ export function HomePage() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
             <SectionHeading id="funding-title" eyebrow={t("funding.eyebrow")} title={t("funding.title")} body={t("funding.body")} inverted />
-            <div className="flex flex-wrap gap-3">
+            <div className="funding-actions flex flex-wrap gap-3">
               <Link href="/contact?category=partnership" className="ys-btn-saffron">
                 <HandHeart aria-hidden className="h-4.5 w-4.5" />
                 {t("funding.support")}
               </Link>
-              <Link href="/contact?category=partnership" className="ys-btn-outline !border-navy-400 !bg-transparent !text-white hover:!bg-navy-700">
+              <Link href="/contact?category=partnership" className="dark-funding-button ys-btn-outline text-white !border-navy-400 !bg-transparent hover:bg-navy-700">
                 <Building2 aria-hidden className="h-4.5 w-4.5" />
                 {t("funding.partner")}
               </Link>
-              <Link href="/contact" className="ys-btn-outline !border-navy-400 !bg-transparent !text-white hover:!bg-navy-700">
+              <Link href="/contact" className="dark-funding-button ys-btn-outline text-white !border-navy-400 !bg-transparent hover:bg-navy-700">
                 <PhoneCall aria-hidden className="h-4.5 w-4.5" />
                 {t("funding.contact")}
               </Link>
@@ -315,7 +315,7 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="rounded-md border border-navy-600 bg-navy-800/70 p-5 sm:p-6">
+          <div className="funding-budget-panel rounded-md border border-navy-600 bg-navy-800/70 p-5 sm:p-6">
             <h3 className="mb-1 text-[1.05rem] font-bold text-white">{t("funding.allocTitle")}</h3>
             <p className="mb-5 text-[0.86rem] text-navy-100">
               {t("pilot.budgetValue")} · {t("pilot.durationValue")}
@@ -333,7 +333,7 @@ export function HomePage() {
             </div>
             <div className="mt-5 border-t border-navy-600 pt-4">
               <p className="mb-2 text-[0.8rem] font-bold tracking-wide text-saffron-300 uppercase">{t("funding.supportersTitle")}</p>
-              <ul className="space-y-1.5">
+              <ul className="funding-supporters space-y-1.5">
                 {[t("funding.supporter1"), t("funding.supporter2"), t("funding.supporter3"), t("funding.supporter4")].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-[0.88rem] leading-6 text-navy-50">
                     <BadgeCheck aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-leaf-300" />

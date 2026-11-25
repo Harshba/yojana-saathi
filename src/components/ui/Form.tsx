@@ -136,7 +136,7 @@ export function OptionCards({
       </legend>
       <div
         className={cn(
-          "grid gap-2",
+          "grid min-w-0 gap-2",
           columns === 2 && "sm:grid-cols-2",
           columns === 3 && "sm:grid-cols-2 lg:grid-cols-3",
           columns === 4 && "grid-cols-2 lg:grid-cols-4",
@@ -148,7 +148,7 @@ export function OptionCards({
             <label
               key={option.value}
               className={cn(
-                "flex cursor-pointer items-start gap-2.5 rounded-md border px-3.5 py-2.5 text-[0.9rem] transition",
+                "flex min-w-0 cursor-pointer items-start gap-2.5 rounded-md border px-3.5 py-2.5 text-[0.9rem] transition",
                 checked
                   ? "border-navy-700 bg-navy-50 font-semibold text-navy-900 ring-1 ring-navy-300"
                   : "border-ash-300 bg-white text-navy-800 hover:border-navy-300 hover:bg-ash-50",
@@ -172,7 +172,7 @@ export function OptionCards({
               >
                 {checked ? <span className="block h-1.5 w-1.5 rounded-full bg-navy-700" /> : null}
               </span>
-              <span>
+              <span className="min-w-0 break-words">
                 {option.label}
                 {option.note ? <span className="mt-0.5 block text-[0.8rem] font-normal text-ash-600">{option.note}</span> : null}
               </span>

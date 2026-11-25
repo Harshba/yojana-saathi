@@ -117,7 +117,9 @@ export function Header() {
       <div className="border-b border-ash-200 bg-white/98 backdrop-blur supports-[backdrop-filter]:bg-white/95">
         <div className="ys-container flex items-center justify-between gap-4 py-2.5">
           <Link href="/" className="flex shrink-0 items-center">
-            <Logo className="w-[170px] sm:w-[195px] lg:w-[210px]" />
+            <span className="ys-logo-surface">
+              <Logo className="w-[170px] sm:w-[195px] lg:w-[210px]" />
+            </span>
           </Link>
 
           <nav aria-label={t("nav.menu")} className="hidden items-center gap-0.5 xl:flex">
