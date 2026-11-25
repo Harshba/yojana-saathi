@@ -46,6 +46,42 @@
   --color-ash-700: #35404e;
 }
 
+/* The theme switch updates these tokens so existing Tailwind surfaces adapt together. */
+html[data-theme="dark"] {
+  --color-white: #101d2a;
+  --color-ash-50: #142333;
+  --color-ash-100: #1a2b3d;
+  --color-ash-200: #2b4054;
+  --color-ash-300: #40576d;
+  --color-ash-400: #8396aa;
+  --color-ash-500: #a3b2c1;
+  --color-ash-600: #c0ccd7;
+  --color-ash-700: #d9e2ea;
+  --color-navy-50: #182b3d;
+  --color-navy-100: #263d53;
+  --color-navy-200: #3e5872;
+  --color-navy-300: #718ba4;
+  --color-navy-400: #9ab0c5;
+  --color-navy-500: #b7cadd;
+  --color-navy-600: #cbd9e6;
+  --color-navy-700: #dbe5ee;
+  --color-navy-800: #e7eef4;
+  --color-navy-900: #f1f5f8;
+}
+
+html[data-theme="dark"] body {
+  background-color: #101d2a;
+  color: #f1f5f8;
+}
+
+html[data-theme="dark"] .text-white { color: #fff; }
+html[data-theme="dark"] .text-navy-100 { color: #dce7f0; }
+html[data-theme="dark"] .bg-navy-900 { background-color: #0a1724; }
+html[data-theme="dark"] .bg-navy-800 { background-color: #12263a; }
+html[data-theme="dark"] .bg-navy-700 { background-color: #1d456d; }
+html[data-theme="dark"] .border-navy-700 { border-color: #30475d; }
+html[data-theme="dark"] .border-navy-600 { border-color: #40576d; }
+
 @layer base {
   :root {
     --ys-text-scale: 100%;

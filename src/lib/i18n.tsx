@@ -13,6 +13,7 @@ import { en } from "./dictionary-en";
 import { hi } from "./dictionary-hi";
 
 export type Lang = "en" | "hi";
+export type Theme = "light" | "dark";
 
 /** Bilingual value used by data files (schemes, pilot phases, stories). */
 export type Loc = { en: string; hi: string };
@@ -31,6 +32,8 @@ type LanguageContextValue = {
   pick: (value: Loc | string | undefined) => string;
   textScale: 0 | 1 | 2;
   setTextScale: (scale: 0 | 1 | 2) => void;
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -38,12 +41,15 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
   const [textScale, setTextScaleState] = useState<0 | 1 | 2>(0);
+  const [theme, setThemeState] = useState<Theme>("light");
 
   useEffect(() => {
     const storedLang = window.localStorage.getItem("ys-lang");
     if (storedLang === "en" || storedLang === "hi") setLangState(storedLang);
     const storedScale = Number(window.localStorage.getItem("ys-text-scale"));
     if (storedScale === 1 || storedScale === 2) setTextScaleState(storedScale);
+    const storedTheme = window.localStorage.getItem("ys-theme");
+    if (storedTheme === "light" || storedTheme === "dark") setThemeState(storedTheme);
   }, []);
 
   useEffect(() => {
@@ -52,7 +58,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     root.dataset.lang = lang;
     root.dataset.textScale = String(textScale);
     root.style.setProperty("--ys-text-scale", `${100 + textScale * 8}%`);
-  }, [lang, textScale]);
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+  }, [lang, textScale, theme]);
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next);
@@ -72,6 +80,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const setTheme = useCallback((next: Theme) => {
+    setThemeState(next);
+    try {
+      window.localStorage.setItem("ys-theme", next);
+    } catch {
+      /* storage blocked — theme still switches for this visit */
+    }
+  }, []);
+
   const value = useMemo<LanguageContextValue>(() => {
     const t = (key: string) => dictionaries[lang][key] ?? en[key] ?? key;
     return {
@@ -82,8 +99,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       pick: (v) => (typeof v === "string" ? v : v ? (lang === "hi" ? v.hi : v.en) : ""),
       textScale,
       setTextScale,
+      theme,
+      setTheme,
     };
-  }, [lang, setLang, textScale, setTextScale]);
+  }, [lang, setLang, textScale, setTextScale, theme, setTheme]);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

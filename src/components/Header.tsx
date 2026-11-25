@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/components/ui/AppLink";
 import { useLocation } from "react-router-dom";
-import { Languages, Menu, PhoneCall, ShieldAlert, X, ZoomIn } from "lucide-react";
+import { Languages, Menu, Moon, PhoneCall, ShieldAlert, Sun, X, ZoomIn } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { primaryNav } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { Logo } from "@/components/Logo";
 
 export function Header() {
-  const { t, lang, setLang, textScale, setTextScale } = useLang();
+  const { t, lang, setLang, textScale, setTextScale, theme, setTheme } = useLang();
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
@@ -89,6 +89,17 @@ export function Header() {
                 </button>
               ))}
             </div>
+
+            <button
+              type="button"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              aria-label={theme === "light" ? (lang === "hi" ? "डार्क मोड चालू करें" : "Switch to dark mode") : (lang === "hi" ? "लाइट मोड चालू करें" : "Switch to light mode")}
+              aria-pressed={theme === "dark"}
+              className="inline-flex items-center gap-1.5 rounded border border-navy-500 px-2 py-1 font-semibold text-navy-100 transition hover:bg-navy-700"
+            >
+              {theme === "light" ? <Moon aria-hidden className="h-3.5 w-3.5" /> : <Sun aria-hidden className="h-3.5 w-3.5" />}
+              <span>{theme === "light" ? (lang === "hi" ? "डार्क" : "Dark") : (lang === "hi" ? "लाइट" : "Light")}</span>
+            </button>
 
             <a href="tel:+917088686900" className="hidden items-center gap-1.5 font-semibold text-navy-100 underline-offset-4 hover:text-white lg:flex">
               <PhoneCall aria-hidden className="h-3.5 w-3.5" />
