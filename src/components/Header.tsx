@@ -116,7 +116,7 @@ export function Header() {
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "rounded-t-sm border-b-2 border-transparent px-3 py-2 text-[0.92rem] font-semibold text-navy-800 transition hover:border-navy-300 hover:bg-navy-50",
+                  "whitespace-nowrap rounded-t-sm border-b-2 border-transparent px-3 py-2 text-[0.92rem] font-semibold text-navy-800 transition hover:border-navy-300 hover:bg-navy-50",
                   isActive(item.href) && "border-saffron-500 bg-navy-50 text-navy-900",
                 )}
               >
@@ -126,7 +126,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/eligibility" className="ys-btn-primary hidden text-[0.88rem] px-4 py-2.5 sm:inline-flex">
+            <Link href="/eligibility" className="ys-btn-primary hidden whitespace-nowrap text-[0.88rem] px-4 py-2.5 sm:inline-flex">
               {t("nav.cta")}
             </Link>
             <button
