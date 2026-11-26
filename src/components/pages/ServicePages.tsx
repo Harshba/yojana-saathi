@@ -40,7 +40,7 @@ export function SchemesIndexPage() {
             {t("hero.ctaEligibility")}
             <ArrowRight aria-hidden className="h-4 w-4" />
           </Link>
-          <a href={schemes[1].officialUrl} target="_blank" rel="noopener noreferrer" className="ys-btn-outline !border-navy-400 !bg-transparent !text-white hover:!bg-navy-700">
+          <a href={schemes[1].officialUrl} target="_blank" rel="noopener noreferrer" className="ys-btn-outline !border-navy-400 !bg-transparent text-white hover:!bg-navy-700">
             MyScheme.gov.in
             <ExternalLink aria-hidden className="h-4 w-4" />
           </a>

@@ -137,7 +137,7 @@ export function AboutPage() {
             <HandHeart aria-hidden className="h-4.5 w-4.5" />
             {t("nav.saathi")}
           </Link>
-          <Link href="/impact" className="ys-btn-outline !border-navy-500 !bg-transparent !text-white hover:!bg-navy-700">
+          <Link href="/impact" className="ys-btn-outline !border-navy-500 !bg-transparent text-white hover:!bg-navy-700">
             {t("nav.impact")}
             <ArrowRight aria-hidden className="h-4 w-4" />
           </Link>

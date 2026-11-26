@@ -37,16 +37,16 @@ export function Header() {
       {/* Utility bar */}
       <div className="bg-navy-800 text-white">
         <div className="ys-container flex flex-wrap items-center justify-between gap-x-6 gap-y-1.5 py-1.5 text-[0.78rem] sm:text-[0.82rem]">
-          <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-3 sm:flex">
             <span className="hidden items-center gap-1.5 font-semibold text-saffron-200 sm:flex">
               <ShieldAlert aria-hidden className="h-3.5 w-3.5" />
               {t("top.disclaimer")}
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <div className="flex w-full items-center justify-between gap-1 sm:w-auto sm:flex-wrap sm:justify-end sm:gap-x-4 sm:gap-y-1">
             {/* Accessibility: text size */}
-            <div className="flex items-center gap-1.5" role="group" aria-label={t("top.textSize")}>
+            <div className="flex items-center gap-1 sm:gap-1.5" role="group" aria-label={t("top.textSize")}>
               <ZoomIn aria-hidden className="h-3.5 w-3.5 text-navy-100" />
               <span className="hidden text-navy-100 md:inline">{t("top.textSize")}:</span>
               {[0, 1, 2].map((scale) => (
@@ -70,7 +70,7 @@ export function Header() {
             </div>
 
             {/* Language selector */}
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1 sm:gap-1.5">
               <Languages aria-hidden className="h-3.5 w-3.5 text-navy-100" />
               {(["en", "hi"] as const).map((code) => (
                 <button
@@ -79,7 +79,7 @@ export function Header() {
                   onClick={() => setLang(code)}
                   aria-pressed={lang === code}
                   className={cn(
-                    "rounded border px-2 py-0.5 font-semibold transition",
+                    "rounded border px-1.5 py-0.5 font-semibold transition sm:px-2",
                     lang === code
                       ? "border-white bg-white text-navy-800"
                       : "border-navy-500 text-navy-100 hover:bg-navy-700",
@@ -95,7 +95,7 @@ export function Header() {
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               aria-label={theme === "light" ? (lang === "hi" ? "डार्क मोड चालू करें" : "Switch to dark mode") : (lang === "hi" ? "लाइट मोड चालू करें" : "Switch to light mode")}
               aria-pressed={theme === "dark"}
-              className="inline-flex items-center gap-1.5 rounded border border-navy-500 px-2 py-1 font-semibold text-navy-100 transition hover:bg-navy-700"
+              className="inline-flex items-center gap-1 rounded border border-navy-500 px-1.5 py-1 font-semibold text-navy-100 transition hover:bg-navy-700 sm:gap-1.5 sm:px-2"
             >
               {theme === "light" ? <Moon aria-hidden className="h-3.5 w-3.5" /> : <Sun aria-hidden className="h-3.5 w-3.5" />}
               <span>{theme === "light" ? (lang === "hi" ? "डार्क" : "Dark") : (lang === "hi" ? "लाइट" : "Light")}</span>
@@ -106,7 +106,7 @@ export function Header() {
               {t("top.helpline")}
             </a>
 
-            <Link href="/contact" className="font-semibold text-saffron-200 underline underline-offset-4 hover:text-white">
+            <Link href="/contact" className="hidden font-semibold text-saffron-200 underline underline-offset-4 hover:text-white sm:inline-flex">
               {t("top.support")}
             </Link>
           </div>

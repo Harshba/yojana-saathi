@@ -97,24 +97,31 @@ html[data-theme="dark"] .ys-logo-surface {
 }
 
 html[data-theme="dark"] .ys-btn-primary {
-  background-color: #1d456d;
-  color: #fff;
+  background-color: #1d456d !important;
+  color: #fff !important;
 }
 
 html[data-theme="dark"] .ys-btn-outline,
 html[data-theme="dark"] .ys-btn-ghost {
-  border-color: #718ba4;
-  background-color: transparent;
-  color: #e7eef4;
+  border-color: #718ba4 !important;
+  background-color: transparent !important;
+  color: #e7eef4 !important;
 }
 
 html[data-theme="dark"] .ys-btn-outline:hover,
 html[data-theme="dark"] .ys-btn-ghost:hover {
-  background-color: #1d456d;
+  background-color: #1d456d !important;
+  color: #fff !important;
 }
 
 html[data-theme="dark"] .ys-btn-saffron {
-  color: #0b1e33;
+  background-color: #f2870d !important;
+  color: #0b1e33 !important;
+}
+
+html[data-theme="dark"] .ys-btn-saffron:hover {
+  background-color: #ffa238 !important;
+  color: #0b1e33 !important;
 }
 
 html[data-theme="dark"] .funding-budget-panel {

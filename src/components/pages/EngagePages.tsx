@@ -43,7 +43,7 @@ export function SaathiPage() {
             <HandHeart aria-hidden className="h-4.5 w-4.5" />
             {t("saathi.submit")}
           </a>
-          <Link href="/about" className="ys-btn-outline !border-navy-400 !bg-transparent !text-white hover:!bg-navy-700">
+          <Link href="/about" className="ys-btn-outline !border-navy-400 !bg-transparent text-white hover:!bg-navy-700">
             {t("nav.about")}
           </Link>
         </div>
